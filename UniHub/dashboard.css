@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f3f4f6;
+}
+
+/* LAYOUT */
+.dashboard {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: white;
+    padding: 20px;
+    border-right: 1px solid #eee;
+}
+
+.logo h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.logo span {
+    .uni{
+    color: #14542F;
+}
+.hub{
+    color: #F07528;
+}
+}
+
+.logo p {
+    color: gray;
+    margin-bottom: 30px;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menu li:hover {
+    background: #f3f4f6;
+}
+
+.active {
+    background: #dcfce7;
+}
+
+/* SUBMENU */
+.submenu {
+    margin-left: 15px;
+    display: none;
+}
+
+.submenu li {
+    font-size: 15px;
+    padding: 10px;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* TOPBAR */
+.topbar {
+    background: white;
+    border-radius: 18px;
+
+    padding: 18px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.topbar h1 {
+    color: #1e293b;
+}
+
+.top-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-icons button {
+    background: #f9fafb;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 30px;
+
+    cursor: pointer;
+}
+.top-notificação button {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f3f4f6;
+
+    cursor: pointer;
+}
+
+.perfil {
+    background: #f9fafb;
+    padding: 10px 15px;
+    border-radius: 30px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* CARDS */
+.card {
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    min-height: 220px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* CALENDÁRIO */
+.calendario {
+    min-height: 420px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* CALENDÁRIO */
+.calendar-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.calendar-content {
+    flex: 2;
+}
+
+.events-panel {
+    flex: 1;
+
+    background: #f9fafb;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    min-height: 250px;
+}
+
+/* SEMANA */
+.weekdays,
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    text-align: center;
+
+    gap: 8px;
+}
+
+.weekdays {
+    margin-bottom: 10px;
+}
+
+/* DIAS */
+.days div {
+    padding: 12px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.days div:hover {
+    background: #e5e7eb;
+}
+
+/* DIA ATUAL */
+.today {
+    background: #166534;
+    color: white;
+}
+
+/* EVENTOS */
+.event-day {
+    background: #f59e0b;
+    color: white;
+}
+
+/* ATIVIDADES */
+.atividade {
+    background: #f3f4f6;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    margin-top: 15px;
+}
+
+.orange {
+    border-left: 5px solid orange;
+}
+
+.green {
+    border-left: 5px solid green;
+}
+
+/* UPDATE */
+.update-item {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #f9fafb;
+
+    border-radius: 12px;
+}
+
+.status {
+    background: orange;
+
+    color: white;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+}
+
+/* NOTAS */
+.nota {
+    margin-top: 20px;
+}
+
+.bar {
+    width: 100%;
+    height: 10px;
+
+    background: #e5e7eb;
+
+    border-radius: 10px;
+
+    margin-top: 5px;
+}
+
+.bar div {
+    height: 100%;
+
+    background: #15803d;
+
+    border-radius: 10px;
+}

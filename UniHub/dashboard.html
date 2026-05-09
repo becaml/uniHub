@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="dashboard.css">
+        <title>UniHub</title>
+        <link rel="icon" type="image/png" href="img\mascote.png">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2><span class="uni">Uni</span><span class="hub">Hub</span> Unifametro</h2>
+            <p>Portal do Aluno</p>
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">
+                🏠 Dashboard
+            </li>
+
+            <!-- MEU CURSO -->
+            <li class="menu-btn" onclick="toggleMenu('cursoSubmenu')">
+                🎓 Meu Curso
+            </li>
+
+            <ul class="submenu" id="cursoSubmenu">
+                <li>📄 Notas</li>
+                <li>📋 Atividades</li>
+                <li>📊 Frequência</li>
+            </ul>
+
+            <!-- FINANCEIRO -->
+            <li class="menu-btn" onclick="toggleMenu('financeiroSubmenu')">
+                💰 Financeiro
+            </li>
+
+            <ul class="submenu" id="financeiroSubmenu">
+                <li>🤝 Negociação</li>
+                <li>🧾 Gerar Boletos</li>
+            </ul>
+
+            <li>
+                📍 GPS
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+           <a href="dashboard.html" ><h1>DASHBOARD</h1></a>
+
+            <div class="top-icons">
+                <button><p>Mensagem</p></button>
+                <div class="top-notificacao">
+                <button>🔔</button>
+                </div>
+
+                <div class="perfil">
+                    👤 Aluno
+                </div>
+            </div>
+
+        </header>
+
+        <!-- GRID -->
+        <section class="grid">
+
+    <!-- CALENDÁRIO -->
+    <div class="card calendario">
+
+        <div class="calendar-header">
+            <h2>Calendário Acadêmico - Abril de 2026</h2>
+        </div>
+
+        <div class="calendar-container">
+
+            <!-- CALENDÁRIO -->
+            <div class="calendar-content">
+
+                <div class="weekdays">
+                    <span>D</span>
+                    <span>S</span>
+                    <span>T</span>
+                    <span>Q</span>
+                    <span>Q</span>
+                    <span>S</span>
+                    <span>S</span>
+                </div>
+
+                <div class="days" id="days"></div>
+
+            </div>
+
+            <!-- EVENTOS -->
+            <div class="events-panel">
+
+                <h3>Eventos</h3>
+
+                <div id="eventPanel">
+                    Selecione um dia
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PRAZO -->
+    <div class="card">
+
+        <h2>Prazo de Atividades</h2>
+
+        <div class="atividade orange">
+            Projeto de Extensão
+        </div>
+
+        <div class="atividade">
+            Banco de Dados
+        </div>
+
+        <div class="atividade green">
+            Programação Orientada a Objetos
+        </div>
+
+    </div>
+
+    <!-- ATUALIZAÇÕES -->
+    <div class="card">
+
+        <h2>Últimas Atualizações</h2>
+
+        <div class="update-item">
+            <span>Relatório Projeto de Extensão</span>
+
+            <span class="status">
+                Pendente
+            </span>
+        </div>
+
+    </div>
+
+    <!-- NOTAS -->
+    <div class="card">
+
+        <h2>Minhas Notas</h2>
+
+        <div class="nota">
+            Redes de Computadores
+            <div class="bar">
+                <div style="width:100%"></div>
+            </div>
+        </div>
+
+        <div class="nota">
+            Banco de Dados
+            <div class="bar">
+                <div style="width:75%"></div>
+            </div>
+        </div>
+
+        <div class="nota">
+            Interface Homem Máquina
+            <div class="bar">
+                <div style="width:80%"></div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
