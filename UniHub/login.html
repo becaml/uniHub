@@ -22,8 +22,30 @@
                  Acessar
             </button></a>
 
-            <img src="img\mascote.png" alt="Mascote" class="mascoteicon">
+            <!-- POPUP -->
+<div class="popup-overlay" id="popup">
 
+    <div class="popup">
+
+        <span class="close" onclick="fecharPopup()">
+            &times;
+        </span>
+
+        <h2>Olá, aluno 👋</h2>
+
+        <p>
+            Precisa de ajuda para encontrar sua sala?
+        </p>
+
+        <button onclick="fecharPopup()">
+            Fechar
+        </button>
+
+    </div>
+
+</div>
+
+            <img src="img\mascote.png" alt="Mascote" class="mascoteicon" onclick="abrirPopup()">
 </div>
 
 <script src="script.js"></script>

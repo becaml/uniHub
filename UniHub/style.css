@@ -151,3 +151,97 @@ h3{
     width: 90px;
     margin-bottom: 10px;
 }
+/* ROBÔ */
+.robo {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.robo:hover {
+    transform: scale(1.05);
+}
+
+/* FUNDO ESCURO */
+.popup-overlay {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+/* POPUP */
+.popup {
+
+    width: 400px;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    position: relative;
+
+    animation: aparecer 0.3s ease;
+}
+
+/* BOTÃO FECHAR */
+.close {
+
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+/* BOTÃO */
+.popup button {
+
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #166534;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecer {
+
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
