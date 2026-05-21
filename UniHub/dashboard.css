@@ -1,300 +1,701 @@
+/* ========================================================= */
+/* RESET */
+/* ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ========================================================= */
+/* VARIÁVEIS */
+/* ========================================================= */
+
+:root {
+
+    --bg-color: #f3f3f3;
+
+    --white: #ffffff;
+
+    --green-dark: #165c3b;
+    --green-light: #76ff87;
+    --green-soft: #baf3c8;
+
+    --orange: #ff8f1f;
+
+    --text: #1d1d1d;
+    --gray: #d8d8d8;
+
+    --shadow:
+        0 2px 10px rgba(0,0,0,0.08);
+
+    --radius: 24px;
+}
+
+/* ========================================================= */
+/* BODY */
+/* ========================================================= */
+
 body {
+
     font-family: "Segoe UI", sans-serif;
-    background: #f3f4f6;
+    background: var(--bg-color);
+    color: var(--text);
 }
 
-/* LAYOUT */
-.dashboard {
+/* ========================================================= */
+/* CONTAINER */
+/* ========================================================= */
+
+.dashboard-container {
+
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 }
 
+/* ========================================================= */
 /* SIDEBAR */
+/* ========================================================= */
+
 .sidebar {
+
     width: 260px;
-    background: white;
-    padding: 20px;
-    border-right: 1px solid #eee;
+    background: #efefef;
+    border-right: 1px solid #ddd;
+
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.logo h2 {
-    font-size: 28px;
-    margin-bottom: 5px;
+/* LOGO */
+
+.logo-title {
+
+    font-size: 2rem;
+    font-weight: 800;
 }
 
-.logo span {
-    .uni{
-    color: #14542F;
-}
-.hub{
-    color: #F07528;
-}
+.logo-subtitle {
+
+    font-size: 1.8rem;
+    margin-top: 4px;
 }
 
-.logo p {
-    color: gray;
-    margin-bottom: 30px;
+.logo-subtitle span {
+
+    color: #4f9d62;
 }
 
-.menu {
-    list-style: none;
+/* MENU */
+
+.sidebar-menu {
+
+    margin-top: 50px;
 }
 
-.menu li {
-    padding: 14px;
-    border-radius: 12px;
-    margin-bottom: 8px;
+.menu-item,
+.submenu-item {
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 14px 16px;
+
+    border-radius: 14px;
+
     cursor: pointer;
-    transition: 0.2s;
+
+    transition: 0.3s ease;
+
+    margin-bottom: 12px;
 }
 
-.menu li:hover {
-    background: #f3f4f6;
+.menu-item:hover,
+.submenu-item:hover {
+
+    background: #dddddd;
+}
+
+.menu-item img,
+.submenu-item img {
+
+    width: 24px;
+}
+
+.menu-item span,
+.submenu-item span {
+
+    font-size: 1.05rem;
 }
 
 .active {
-    background: #dcfce7;
+
+    background: var(--green-soft);
+}
+
+.expandable-btn {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-left {
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
 /* SUBMENU */
+
 .submenu {
-    margin-left: 15px;
-    display: none;
+
+    margin-left: 20px;
+    margin-top: 8px;
 }
 
-.submenu li {
-    font-size: 15px;
-    padding: 10px;
+/* MASCOTE */
+
+.mascot-container {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
 }
 
-/* MAIN */
-.main {
+.mascot-image {
+
+    width: 120px;
+}
+
+/* ========================================================= */
+/* MAIN CONTENT */
+/* ========================================================= */
+
+.main-content {
+
     flex: 1;
-    padding: 20px;
+    padding: 30px;
 }
 
-/* TOPBAR */
-.topbar {
-    background: white;
-    border-radius: 18px;
+/* ========================================================= */
+/* HEADER */
+/* ========================================================= */
 
-    padding: 18px 25px;
+.top-header {
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    margin-bottom: 20px;
+    background: var(--white);
 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-radius: 18px;
+
+    padding: 20px 30px;
+
+    box-shadow: var(--shadow);
 }
 
-.topbar h1 {
-    color: #1e293b;
+/* MENU TOPO */
+
+.top-nav {
+
+    display: flex;
+    gap: 60px;
 }
 
-.top-icons {
+.top-nav a {
+
+    text-decoration: none;
+    color: var(--text);
+
+    font-size: 1.2rem;
+}
+
+/* ÁREA DIREITA */
+
+.header-right {
+
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 24px;
 }
 
-.top-icons button {
-    background: #f9fafb;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 30px;
+/* NOTIFICAÇÃO */
 
-    cursor: pointer;
+.notification-wrapper {
+
+    position: relative;
 }
-.top-notificação button {
-    width: 42px;
-    height: 42px;
 
-    border: none;
+.notification-wrapper i {
+
+    font-size: 1.5rem;
+}
+
+.notification-dot {
+
+    position: absolute;
+
+    top: -2px;
+    right: -5px;
+
+    width: 12px;
+    height: 12px;
+
     border-radius: 50%;
 
-    background: #f3f4f6;
-
-    cursor: pointer;
+    background: var(--orange);
 }
 
-.perfil {
-    background: #f9fafb;
-    padding: 10px 15px;
-    border-radius: 30px;
-}
+/* AVATAR */
 
-/* GRID */
-.grid {
-    display: grid;
+.user-avatar {
 
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-}
+    width: 48px;
+    height: 48px;
 
-/* CARDS */
-.card {
-    background: white;
+    border-radius: 50%;
 
-    border-radius: 20px;
+    background: #ececec;
 
-    padding: 20px;
-
-    min-height: 220px;
-
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-/* CALENDÁRIO */
-.calendario {
-    min-height: 420px;
-}
-
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-}
-
-/* CALENDÁRIO */
-.calendar-container {
     display: flex;
-    gap: 20px;
-    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-avatar i {
+
+    font-size: 1.3rem;
+}
+
+/* ========================================================= */
+/* TÍTULOS */
+/* ========================================================= */
+
+.hero-title {
+
+    margin: 40px 0;
+}
+
+.hero-title h1 {
+
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.hero-title h2 {
+
+    margin-top: 8px;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+/* ========================================================= */
+/* GRID */
+/* ========================================================= */
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1.1fr;
+
+    gap: 24px;
+}
+
+/* ========================================================= */
+/* CARD PADRÃO */
+/* ========================================================= */
+
+.card {
+
+    background: var(--white);
+
+    border-radius: var(--radius);
+
+    padding: 24px;
+
+    box-shadow: var(--shadow);
+}
+
+/* ========================================================= */
+/* CALENDÁRIO */
+/* ========================================================= */
+
+.calendar-card {
+
+    min-height: 500px;
+}
+
+.card-header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-title img {
+
+    width: 22px;
+}
+
+.card-title h3 {
+
+    font-size: 1.4rem;
 }
 
 .calendar-content {
-    flex: 2;
+
+    display: flex;
+    gap: 24px;
+
+    margin-top: 30px;
 }
 
-.events-panel {
+.calendar-wrapper {
+
     flex: 1;
-
-    background: #f9fafb;
-
-    border-radius: 15px;
-
-    padding: 15px;
-
-    min-height: 250px;
 }
 
-/* SEMANA */
-.weekdays,
-.days {
+.week-days,
+.calendar-grid {
+
     display: grid;
     grid-template-columns: repeat(7, 1fr);
 
-    text-align: center;
-
-    gap: 8px;
+    gap: 12px;
 }
 
-.weekdays {
-    margin-bottom: 10px;
+.week-days {
+
+    margin-bottom: 20px;
+}
+
+.week-days span {
+
+    text-align: center;
+    color: #666;
 }
 
 /* DIAS */
-.days div {
-    padding: 12px;
 
-    border-radius: 10px;
+.day {
+
+    border: none;
+
+    height: 48px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
 
     cursor: pointer;
 
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 
-.days div:hover {
-    background: #e5e7eb;
+.day:hover {
+
+    transform: scale(1.05);
 }
 
-/* DIA ATUAL */
-.today {
-    background: #166534;
+.dark {
+
+    background: var(--green-dark);
     color: white;
 }
 
-/* EVENTOS */
-.event-day {
-    background: #f59e0b;
+.light {
+
+    background: var(--green-light);
     color: white;
-}
-
-/* ATIVIDADES */
-.atividade {
-    background: #f3f4f6;
-
-    padding: 15px;
-
-    border-radius: 12px;
-
-    margin-top: 15px;
 }
 
 .orange {
-    border-left: 5px solid orange;
+
+    background: var(--orange);
+    color: white;
+}
+
+.disabled {
+
+    background: #e0e0e0;
+    color: #999;
+}
+
+.active-day {
+
+    box-shadow:
+        0 0 0 4px rgba(118,255,135,0.25);
+}
+
+/* EVENTOS */
+
+.events-panel {
+
+    width: 220px;
+
+    border-left: 1px solid #e3e3e3;
+
+    padding-left: 20px;
+}
+
+.events-panel h4 {
+
+    margin-bottom: 20px;
+}
+
+.event-block {
+
+    margin-bottom: 28px;
+}
+
+.event-block strong {
+
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ========================================================= */
+/* PRAZOS */
+/* ========================================================= */
+
+.activities-card {
+
+    height: fit-content;
+}
+
+.activities-title h3 {
+
+    margin-bottom: 24px;
+}
+
+.activity-item {
+
+    display: flex;
+    gap: 14px;
+
+    padding: 16px;
+
+    background: #f8f8f8;
+
+    border-radius: 16px;
+
+    margin-bottom: 16px;
+
+    box-shadow: var(--shadow);
+}
+
+.activity-bar {
+
+    width: 6px;
+    border-radius: 999px;
 }
 
 .green {
-    border-left: 5px solid green;
+
+    background: #15b844;
 }
 
-/* UPDATE */
-.update-item {
+.orange {
+
+    background: var(--orange);
+}
+
+.activity-content span {
+
+    color: var(--orange);
+    font-weight: bold;
+}
+
+/* ========================================================= */
+/* TABELA */
+/* ========================================================= */
+
+.updates-card table {
+
+    width: 100%;
+    margin-top: 24px;
+
+    border-collapse: collapse;
+}
+
+.updates-card th {
+
+    background: #e4e4e4;
+    padding: 14px;
+}
+
+.updates-card td {
+
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.pending {
+
+    background: var(--orange);
+    color: white;
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+}
+
+/* ========================================================= */
+/* NOTAS */
+/* ========================================================= */
+
+.grade-list {
+
+    margin-top: 24px;
+}
+
+.grade-item {
+
     display: flex;
     justify-content: space-between;
 
-    margin-top: 20px;
+    padding: 14px 0;
 
-    padding: 15px;
-
-    background: #f9fafb;
-
-    border-radius: 12px;
+    border-bottom: 1px solid #eee;
 }
 
-.status {
-    background: orange;
+.grade {
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
 
     color: white;
-
-    padding: 5px 10px;
-
-    border-radius: 20px;
-
-    font-size: 14px;
+    font-weight: bold;
 }
 
-/* NOTAS */
-.nota {
-    margin-top: 20px;
+.green-grade {
+
+    background: var(--green-dark);
 }
 
-.bar {
-    width: 100%;
-    height: 10px;
+.orange-grade {
 
-    background: #e5e7eb;
-
-    border-radius: 10px;
-
-    margin-top: 5px;
+    background: var(--orange);
 }
 
-.bar div {
-    height: 100%;
+/* ========================================================= */
+/* RESPONSIVIDADE */
+/* ========================================================= */
 
-    background: #15803d;
+.hamburger {
 
-    border-radius: 10px;
+    display: none;
+}
+
+@media (max-width: 1200px) {
+
+    .dashboard-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-content {
+
+        flex-direction: column;
+    }
+
+    .events-panel {
+
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #eee;
+
+        padding-left: 0;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .sidebar {
+
+        position: fixed;
+
+        left: -100%;
+        top: 0;
+
+        z-index: 999;
+
+        height: 100vh;
+
+        transition: 0.3s ease;
+    }
+
+    .sidebar.active-sidebar {
+
+        left: 0;
+    }
+
+    .hamburger {
+
+        display: block;
+
+        background: none;
+        border: none;
+
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .top-nav {
+
+        display: none;
+    }
+
+    .hero-title h1 {
+
+        font-size: 2.2rem;
+    }
+
+    .hero-title h2 {
+
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .main-content {
+
+        padding: 16px;
+    }
+
+    .card {
+
+        padding: 18px;
+    }
+
+    .calendar-grid {
+
+        gap: 8px;
+    }
+
+    .day {
+
+        height: 42px;
+    }
 }
