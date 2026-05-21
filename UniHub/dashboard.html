@@ -1,193 +1,509 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="dashboard.css">
-        <title>UniHub</title>
-        <link rel="icon" type="image/png" href="img\mascote.png">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniHub - Dashboard</title>
 
-<div class="dashboard">
+    <!-- CSS -->
+    <link rel="stylesheet" href="dashboard.css" />
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
+    <!-- Ícones -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+</head>
 
-        <div class="logo">
-            <h2><span class="uni">Uni</span><span class="hub">Hub</span> Unifametro</h2>
-            <p>Portal do Aluno</p>
-        </div>
+<body>
 
-        <ul class="menu">
+    <!-- ========================================================= -->
+    <!-- CONTAINER PRINCIPAL -->
+    <!-- ========================================================= -->
 
-            <li class="active">
-                🏠 Dashboard
-            </li>
+    <div class="dashboard-container">
 
-            <!-- MEU CURSO -->
-            <li class="menu-btn" onclick="toggleMenu('cursoSubmenu')">
-                🎓 Meu Curso
-            </li>
+        <!-- ========================================================= -->
+        <!-- SIDEBAR -->
+        <!-- ========================================================= -->
 
-            <ul class="submenu" id="cursoSubmenu">
-                <li>📄 Notas</li>
-                <li>📋 Atividades</li>
-                <li>📊 Frequência</li>
-            </ul>
+        <aside class="sidebar" id="sidebar">
 
-            <!-- FINANCEIRO -->
-            <li class="menu-btn" onclick="toggleMenu('financeiroSubmenu')">
-                💰 Financeiro
-            </li>
+            <!-- LOGO -->
+            <div class="logo-area">
 
-            <ul class="submenu" id="financeiroSubmenu">
-                <li>🤝 Negociação</li>
-                <li>🧾 Gerar Boletos</li>
-            </ul>
+                <h1 class="logo-title">
+                    UniHub - Unifametro
+                </h1>
 
-            <li>
-                📍 GPS
-            </li>
-
-        </ul>
-
-    </aside>
-
-    <!-- CONTEÚDO -->
-    <main class="main">
-
-        <!-- TOPBAR -->
-        <header class="topbar">
-
-           <a href="dashboard.html" ><h1>DASHBOARD</h1></a>
-
-            <div class="top-icons">
-                <button><p>Mensagem</p></button>
-                <div class="top-notificacao">
-                <button>🔔</button>
-                </div>
-
-                <div class="perfil">
-                    👤 Aluno
-                </div>
-            </div>
-
-        </header>
-
-        <!-- GRID -->
-        <section class="grid">
-
-    <!-- CALENDÁRIO -->
-    <div class="card calendario">
-
-        <div class="calendar-header">
-            <h2>Calendário Acadêmico - Abril de 2026</h2>
-        </div>
-
-        <div class="calendar-container">
-
-            <!-- CALENDÁRIO -->
-            <div class="calendar-content">
-
-                <div class="weekdays">
-                    <span>D</span>
-                    <span>S</span>
-                    <span>T</span>
-                    <span>Q</span>
-                    <span>Q</span>
-                    <span>S</span>
-                    <span>S</span>
-                </div>
-
-                <div class="days" id="days"></div>
+                <p class="logo-subtitle">
+                    Portal do <span>Aluno</span>
+                </p>
 
             </div>
 
-            <!-- EVENTOS -->
-            <div class="events-panel">
+            <!-- MENU -->
+            <nav class="sidebar-menu">
 
-                <h3>Eventos</h3>
+                <!-- ITEM -->
+                <div class="menu-item active">
 
-                <div id="eventPanel">
-                    Selecione um dia
+                    <img
+                        src="assets/imagens/Home Icon.png"
+                        alt="Dashboard"
+                    />
+
+                    <span>Dashboard</span>
+
                 </div>
+
+                <!-- ITEM EXPANSÍVEL -->
+                <div class="menu-expandable">
+
+                    <div class="menu-item expandable-btn" id="courseToggle">
+
+                        <div class="menu-left">
+
+                            <img
+                                src="assets/imagens/chapeu.png"
+                                alt="Curso"
+                            />
+
+                            <span>Meu curso</span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+                    <!-- SUBMENU -->
+                    <div class="submenu" id="submenu">
+
+                        <div class="submenu-item">
+
+                            <img
+                                src="assets/imagens/notas.png"
+                                alt="Notas"
+                            />
+
+                            <span>Notas</span>
+
+                        </div>
+
+                        <div class="submenu-item">
+
+                            <img
+                                src="assets/imagens/atividades.png"
+                                alt="Atividades"
+                            />
+
+                            <span>Atividades</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM -->
+                <div class="menu-item">
+
+                    <img
+                        src="assets/imagens/localização.png"
+                        alt="GPS"
+                    />
+
+                    <span>GPS Universidade</span>
+
+                </div>
+
+            </nav>
+
+            <!-- MASCOTE -->
+            <div class="mascot-container">
+
+                <img
+                    src="assets/imagens/mascote.png"
+                    alt="Mascote"
+                    class="mascot-image"
+                />
 
             </div>
 
-        </div>
+        </aside>
+
+        <!-- ========================================================= -->
+        <!-- CONTEÚDO PRINCIPAL -->
+        <!-- ========================================================= -->
+
+        <main class="main-content">
+
+            <!-- ========================================================= -->
+            <!-- HEADER SUPERIOR -->
+            <!-- ========================================================= -->
+
+            <header class="top-header">
+
+                <!-- MENU MOBILE -->
+                <button class="hamburger" id="hamburger">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <!-- MENU TOPO -->
+                <div class="top-nav">
+
+                    <a href="#">Dashboard</a>
+                    <a href="#">Mensagens</a>
+
+                </div>
+
+                <!-- ÁREA DIREITA -->
+                <div class="header-right">
+
+                    <!-- NOTIFICAÇÃO -->
+                    <div class="notification-wrapper">
+
+                        <i class="fa-solid fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </div>
+
+                    <!-- AVATAR -->
+                    <div class="user-avatar">
+
+                        <i class="fa-regular fa-user"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- ========================================================= -->
+            <!-- TÍTULOS -->
+            <!-- ========================================================= -->
+
+            <section class="hero-title">
+
+                <h1>Bem vindo(a), Aluno</h1>
+
+                <h2>Dashboard Acadêmico</h2>
+
+            </section>
+
+            <!-- ========================================================= -->
+            <!-- GRID PRINCIPAL -->
+            <!-- ========================================================= -->
+
+            <section class="dashboard-grid">
+
+                <!-- ========================================================= -->
+                <!-- CARD CALENDÁRIO -->
+                <!-- ========================================================= -->
+
+                <div class="calendar-card card">
+
+                    <!-- TOPO -->
+                    <div class="card-header">
+
+                        <div class="card-title">
+
+                            <img
+                                src="assets/imagens/calendario.png"
+                                alt="Calendário"
+                            />
+
+                            <h3>
+                                Calendário Acadêmico - Abril de 2026
+                            </h3>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+                    <!-- CONTEÚDO -->
+                    <div class="calendar-content">
+
+                        <!-- CALENDÁRIO -->
+                        <div class="calendar-wrapper">
+
+                            <!-- DIAS SEMANA -->
+                            <div class="week-days">
+
+                                <span>D</span>
+                                <span>S</span>
+                                <span>T</span>
+                                <span>Q</span>
+                                <span>Q</span>
+                                <span>S</span>
+                                <span>S</span>
+
+                            </div>
+
+                            <!-- DIAS -->
+                            <div class="calendar-grid">
+
+                                <button class="day dark">1</button>
+                                <button class="day dark">2</button>
+                                <button class="day dark">3</button>
+                                <button class="day dark">4</button>
+
+                                <button class="day dark">5</button>
+                                <button class="day dark">6</button>
+                                <button class="day dark">7</button>
+
+                                <button class="day light active-day">8</button>
+                                <button class="day light">9</button>
+                                <button class="day light">10</button>
+                                <button class="day light">11</button>
+
+                                <button class="day dark">12</button>
+                                <button class="day orange">13</button>
+                                <button class="day light">14</button>
+                                <button class="day dark">15</button>
+
+                                <button class="day dark">16</button>
+                                <button class="day dark">17</button>
+                                <button class="day dark">18</button>
+
+                                <button class="day disabled">19</button>
+                                <button class="day light">20</button>
+                                <button class="day orange">21</button>
+                                <button class="day disabled">22</button>
+
+                                <button class="day disabled">23</button>
+                                <button class="day disabled">24</button>
+                                <button class="day disabled">25</button>
+
+                                <button class="day disabled">26</button>
+                                <button class="day disabled">27</button>
+                                <button class="day disabled">28</button>
+
+                                <button class="day disabled">29</button>
+                                <button class="day disabled">30</button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- EVENTOS -->
+                        <div class="events-panel">
+
+                            <h4>Eventos</h4>
+
+                            <div class="event-block">
+
+                                <strong>Feriado</strong>
+
+                                <p>
+                                    13 Aniversário de Fortaleza
+                                </p>
+
+                                <p>
+                                    21 Tiradentes
+                                </p>
+
+                            </div>
+
+                            <div class="event-block">
+
+                                <strong>Avaliações</strong>
+
+                                <p>8 - 14 AV1</p>
+
+                                <p>20 AV1</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ========================================================= -->
+                <!-- CARD PRAZOS -->
+                <!-- ========================================================= -->
+
+                <div class="activities-card card">
+
+                    <div class="activities-title">
+
+                        <h3>
+                            Prazo de Atividades Próximas
+                        </h3>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="activity-item orange-border">
+
+                        <div class="activity-bar orange"></div>
+
+                        <div class="activity-content">
+
+                            <p>Relatório Projeto de Extensão</p>
+
+                            <span>Pendentes</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="activity-item">
+
+                        <div class="activity-bar green"></div>
+
+                        <div class="activity-content">
+
+                            <p>Atividade Banco de Dados</p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="activity-item">
+
+                        <div class="activity-bar green"></div>
+
+                        <div class="activity-content">
+
+                            <p>
+                                Atividade Programação Orientada a Objeto
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ========================================================= -->
+                <!-- CARD ATUALIZAÇÕES -->
+                <!-- ========================================================= -->
+
+                <div class="updates-card card">
+
+                    <div class="card-title simple-title">
+
+                        <img
+                            src="assets/imagens/calendario.png"
+                            alt="Atualizações"
+                        />
+
+                        <h3>Últimas Atualizações</h3>
+
+                    </div>
+
+                    <!-- TABELA -->
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Status</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Relatório Projeto de Extensão</td>
+
+                                <td>22/04</td>
+
+                                <td>
+
+                                    <span class="status pending">
+                                        Pendentes
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <!-- ========================================================= -->
+                <!-- CARD NOTAS -->
+                <!-- ========================================================= -->
+
+                <div class="grades-card card">
+
+                    <div class="card-title simple-title">
+
+                        <img
+                            src="assets/imagens/notas.png"
+                            alt="Notas"
+                        />
+
+                        <h3>Minhas Notas Recentes</h3>
+
+                    </div>
+
+                    <!-- LISTA -->
+                    <div class="grade-list">
+
+                        <div class="grade-item">
+
+                            <span>Redes de Computadores</span>
+
+                            <span class="grade green-grade">
+                                10,0
+                            </span>
+
+                        </div>
+
+                        <div class="grade-item">
+
+                            <span>Banco de Dados</span>
+
+                            <span class="grade orange-grade">
+                                7,5
+                            </span>
+
+                        </div>
+
+                        <div class="grade-item">
+
+                            <span>Interface Homem Máquina</span>
+
+                            <span class="grade green-grade">
+                                8,0
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
 
     </div>
 
-    <!-- PRAZO -->
-    <div class="card">
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 
-        <h2>Prazo de Atividades</h2>
-
-        <div class="atividade orange">
-            Projeto de Extensão
-        </div>
-
-        <div class="atividade">
-            Banco de Dados
-        </div>
-
-        <div class="atividade green">
-            Programação Orientada a Objetos
-        </div>
-
-    </div>
-
-    <!-- ATUALIZAÇÕES -->
-    <div class="card">
-
-        <h2>Últimas Atualizações</h2>
-
-        <div class="update-item">
-            <span>Relatório Projeto de Extensão</span>
-
-            <span class="status">
-                Pendente
-            </span>
-        </div>
-
-    </div>
-
-    <!-- NOTAS -->
-    <div class="card">
-
-        <h2>Minhas Notas</h2>
-
-        <div class="nota">
-            Redes de Computadores
-            <div class="bar">
-                <div style="width:100%"></div>
-            </div>
-        </div>
-
-        <div class="nota">
-            Banco de Dados
-            <div class="bar">
-                <div style="width:75%"></div>
-            </div>
-        </div>
-
-        <div class="nota">
-            Interface Homem Máquina
-            <div class="bar">
-                <div style="width:80%"></div>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-    </main>
-
-</div>
-
-<script src="script.js"></script>
 </body>
+</html>
